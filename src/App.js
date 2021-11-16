@@ -14,6 +14,16 @@ function App() {
     setScreen(href);
   }
 
+  function onLogin(auth) {
+    setAuth(auth);
+    setScreen('/pet/list');
+  }
+
+  function onLogout() {
+    setAuth(null);
+    setScreen('/login');
+  }
+
   return (
     <div className="App min-vh-100 d-flex flex-column">
       <Navbar auth={auth} screen={screen} onNavigate={onNavigate} />
