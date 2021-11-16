@@ -15,12 +15,14 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App min-vh-100 d-flex flex-column">
       <Navbar auth={auth} screen={screen} onNavigate={onNavigate} />
-      <main className="container mt-5">
-        {screen === '/login' && <LoginForm />}
-        {screen === '/pet/list' && <PetList />}
-      </main>
+      <div className="bg-black text-white flex-grow-1">
+        <main className="container my-5">
+          {screen === '/login' && <LoginForm />}
+          {screen === '/pet/list' && <PetList />}
+        </main>
+      </div>
       <Footer />
     </div>
   );
